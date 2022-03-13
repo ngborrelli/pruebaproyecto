@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="autos, deportivos, importados, porsche, lamborghini, maserati, mercedes, bmw, clasicos, usados">
+    <meta name="description" content="Ingresa aqui la consulta que desees">
+    <title>Automoviles deportivos S.A. - Consultas</title>
+    <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="gridGeneral">
+
+    <header class="cabecera">
+        <a class="linkIndex" href="../index.html" title="Automoviles Deportivos S.A.">
+            <div>
+                <img class="logo" src="../images/logo.png" alt="Logo">
+                <span class="titulo">Automoviles&nbsp;deportivos&nbsp;S.A.</span>
+            </div>
+        </a>
+    </header>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="vehiculos.html">Vehiculos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><span class="linkActivo" href="#">Contacto</span></li>
+            <li><a href="sucursales.html">Sucursales</a></li>
+        </ul>
+    </nav>
+
+    <section class="contenidoPrincipal">
+
+        <div class="tituloPagina">
+            <h1>Contactanos</h1>
+        </div>
+
+        <div class="contenido contacto">
+            <form class="formContacto">
+                <label for="nombreapellido">Nombre completo</label>
+                <input type="text" placeholder="Ingrese su nombre y apellido" id="nombre" size="40">
+
+                <label for="email">E-Mail</label>
+                <input type="email" placeholder="Ingrese su e-mail" id="email" size="40">
+
+                <div class="cajaTelefonoForm">
+                    <label for="telefono">Telefono</label>
+                    <input type="text" placeholder="Ingrese su telefono" id="telefono" size="30">
+                </div>
+
+                <div class="cajaMarcas">
+                    <label for="marcas">Marca</label>
+                    <select name="marcas">
+                        <option value="">Elegi una marca para informarte</option>
+                        <option value="P">Porsche</option>
+                        <option value="L">Lamborghini</option>
+                        <option value="M">Maserati</option>
+                        <option value="T">TVR</option>
+                    </select>
+                </div>
+
+                <label for="consulta">Consulta</label>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Ingrese su consulta"></textarea>
+
+                <div class="cajaEmpresaParticular">
+                    <label id="lblEmpresa" for="empresa">Empresa</label>
+                    <input type="radio" value="empresa" id="radEmpresa" name="radTipoCliente">
+                    <label id="lblParticular" for="particular">Particular</label>
+                    <input type="radio" value="particular" id="radParticular" name="radTipoCliente">
+                </div>
+
+                <div class="cajaMantenermeInformado">
+                    <input type="checkbox" id="checkinformado" value="1">
+                    <label for="check">Mantenerme informado</label>
+                </div>
+
+                <div class="cajaBoton">
+                    <input id="btnEnviar" type="submit" value="Enviar">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        © 2022 Nicolás G. Borrelli&nbsp;&nbsp;·&nbsp;&nbsp;
+        <a href="https://github.com/ngborrelli/AgenciaAutosDeportivosBorrelli/">GitHub</a>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,661 @@
+/* Clases comunes a todas las paginas ---------------------------------------*/
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box; }
+
+html {
+  color: #f0f0f0;
+  font-family: Roboto, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  font-size: 13pt; }
+
+#gridGeneral {
+  display: grid;
+  grid-template-areas: "cabecera menu" "contenido contenido" "pie pie";
+  grid-gap: 0px;
+  grid-template-rows: 60px auto 50px;
+  grid-template-columns: 50% 50%;
+  height: 100vh;
+  background-color: #0f0f0f; }
+
+header {
+  grid-area: cabecera;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f0f0f; }
+  header a {
+    margin: 0px;
+    padding: 0px;
+    outline: 0px;
+    text-decoration: none; }
+    header a div {
+      display: flex; }
+      header a div span {
+        line-height: 60px;
+        padding-left: 15px;
+        font-size: 1.7rem;
+        color: #f0f0f0;
+        font-weight: bold; }
+
+nav {
+  grid-area: menu;
+  display: flex;
+  margin-left: auto; }
+  nav .linkActivo {
+    text-transform: uppercase;
+    line-height: 60px;
+    color: #fff;
+    font-weight: bold; }
+  nav ul {
+    list-style-type: none;
+    padding-top: 4px; }
+    nav ul li {
+      display: inline;
+      padding-right: 20px; }
+      nav ul li a {
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: 60px;
+        color: #f0f0f0; }
+        nav ul li a:hover {
+          color: #ffffff;
+          animation: glow 2s ease-in-out infinite alternate; }
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 20px #2d9da9; }
+  to {
+    text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7; } }
+
+section.contenidoPrincipal {
+  grid-area: contenido; }
+
+.tituloPagina {
+  width: 100%;
+  text-align: center; }
+
+.tituloPagina h1 {
+  font-size: 1.5rem; }
+
+.linksBase, .linksInternos a, .cajaMarcaLink a {
+  text-decoration: none;
+  color: #f0f0f0; }
+  .linksBase:hover, .linksInternos a:hover, .cajaMarcaLink a:hover {
+    color: #fff;
+    animation: glow 2s ease-in-out infinite alternate; }
+
+footer {
+  grid-area: pie;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f0f0f;
+  border-top: 1px solid grey; }
+  footer a {
+    text-decoration: none;
+    color: #00ca87; }
+    footer a:hover {
+      color: #00ffaa; }
+
+/* Clases para index.html ---------------------------------------------------*/
+.fotoIndex {
+  width: 100%;
+  outline: 0px;
+  margin: 0px;
+  padding: 0px;
+  /* en estilos.scss */
+  height: auto;
+  margin-bottom: 20px; }
+
+.textoIndex {
+  padding: 20px 10% 20px 10%;
+  text-align: left;
+  background: #0f0f0f; }
+  .textoIndex p {
+    line-height: 30px;
+    margin-bottom: 15px; }
+    .textoIndex p:last-child {
+      padding-bottom: 20px; }
+
+/* Clases para nosotros.html ------------------------------------------------*/
+.contenido.nosotros {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 14% 20px 14%;
+  text-align: left; }
+  .contenido.nosotros .cajaVentas, .contenido.nosotros .cajaPostventa, .contenido.nosotros .cajaAsesoramiento {
+    margin-top: 20px; }
+    .contenido.nosotros .cajaVentas h2, .contenido.nosotros .cajaPostventa h2, .contenido.nosotros .cajaAsesoramiento h2 {
+      font-size: 1.5rem;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #f0f0f0; }
+    .contenido.nosotros .cajaVentas h3, .contenido.nosotros .cajaPostventa h3, .contenido.nosotros .cajaAsesoramiento h3 {
+      font-size: 1.2rem; }
+    .contenido.nosotros .cajaVentas h3, .contenido.nosotros .cajaVentas h4, .contenido.nosotros .cajaPostventa h3, .contenido.nosotros .cajaPostventa h4, .contenido.nosotros .cajaAsesoramiento h3, .contenido.nosotros .cajaAsesoramiento h4 {
+      text-align: center; }
+    .contenido.nosotros .cajaVentas p, .contenido.nosotros .cajaPostventa p, .contenido.nosotros .cajaAsesoramiento p {
+      padding-bottom: 10px; }
+  .contenido.nosotros .ventasImagen, .contenido.nosotros .asesoramientoImagen {
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    padding: 20px 0px 20px 0px; }
+    .contenido.nosotros .ventasImagen img, .contenido.nosotros .asesoramientoImagen img {
+      width: 40%;
+      padding-bottom: 20px; }
+  .contenido.nosotros .nosotrosTaller {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px 120px 30px 120px;
+    margin-bottom: 20px; }
+    .contenido.nosotros .nosotrosTaller .infoTaller {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px; }
+      .contenido.nosotros .nosotrosTaller .infoTaller img {
+        width: 80%;
+        margin-bottom: 20px; }
+
+.linksInternos {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px; }
+
+.linksInternos a {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 0px 15px 0px 15px; }
+
+.ventasModalidades {
+  padding: 30px 100px 30px 100px; }
+  .ventasModalidades li {
+    line-height: 30px;
+    padding-bottom: 10px; }
+
+.itemPostventa {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 150px 50px 150px; }
+  .itemPostventa ul {
+    padding: 8px; }
+
+/* Clases para vehiculos.html --------------------------------------------------*/
+.contenido.vehiculos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px 4% 30px 4%; }
+
+.cajaVehiculo {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  background-color: #1f1f1f;
+  /* en estilos.scss */ }
+  .cajaVehiculo img {
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out; }
+  .cajaVehiculo:hover img {
+    filter: brightness(1.2); }
+  .cajaVehiculo h2, .cajaVehiculo p {
+    text-decoration: none;
+    color: #f0f0f0; }
+  .cajaVehiculo .cajaVehiculoTexto {
+    padding: 8px; }
+    .cajaVehiculo .cajaVehiculoTexto .grisClaro {
+      color: #b8b8b8;
+      padding-top: 3px; }
+
+.contenido.vehiculo {
+  display: grid;
+  grid-template-columns: 800px 1fr;
+  grid-template-rows: 600px 1fr;
+  grid-template-areas: "fotos textos" "tabla textos";
+  margin: 15px 0px 15px 0px;
+  padding: 0px 150px 0px 150px; }
+
+.cajaFotos {
+  margin: 10px; }
+  .cajaFotos img {
+    grid-area: fotos;
+    max-width: 100%;
+    vertical-align: top;
+    cursor: pointer; }
+  .cajaFotos .gallery {
+    display: flex;
+    margin: 10px auto;
+    max-width: 100%;
+    position: relative;
+    padding-top: 80%; }
+  @media screen and (min-width: 600px) {
+    .cajaFotos .gallery {
+      padding-top: 520px; } }
+  .cajaFotos .gallery__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    cursor: default !important; }
+  .cajaFotos .gallery__thumb {
+    padding-top: 6px;
+    margin: 6px;
+    display: block; }
+  .cajaFotos .gallery__selector {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden; }
+  .cajaFotos .gallery__selector:checked + .gallery__img {
+    opacity: 1; }
+  .cajaFotos .gallery__selector:checked ~ .gallery__thumb > img {
+    box-shadow: 0 0 0 3px #0be2f6; }
+
+.cajaTabla {
+  grid-area: tabla;
+  margin: 10px; }
+  .cajaTabla table {
+    border-collapse: collapse;
+    border: solid gray 2px;
+    border-radius: 6px;
+    width: 100%; }
+    .cajaTabla table td {
+      border: 1px solid gray;
+      padding: 10px 6px 10px 6px; }
+    .cajaTabla table td:first-child {
+      border-left: none; }
+    .cajaTabla table .eti {
+      width: 20%;
+      background-color: #1f1f1f; }
+    .cajaTabla table .val {
+      width: 30%; }
+
+.cajaTextos {
+  grid-area: textos;
+  margin: 20px 0px 20px 0px;
+  padding: 0px 150px 0px 150px; }
+  .cajaTextos h3 {
+    border-top: 1px solid #2a2a2a;
+    margin: 35px 0px 10px 0px;
+    padding-top: 30px; }
+    .cajaTextos h3:first-child {
+      border: none;
+      margin-top: 0px; }
+  .cajaTextos ul {
+    margin-left: 17px; }
+
+/* Clases para marcas.html --------------------------------------------------*/
+.contenido.marcas {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-top: 30px; }
+
+.cajaMarca {
+  width: 49%;
+  margin: 5px;
+  display: grid;
+  align-items: start;
+  grid-template-areas: "marcaImagen marcaLink" "marcaImagen marcaTexto";
+  grid-gap: 0px;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 120px 1fr;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  background-color: #1f1f1f;
+  /* en estilos.scss */ }
+  .cajaMarca:nth-child(7), .cajaMarca:nth-child(8) {
+    margin-bottom: 20px; }
+
+.cajaMarcaImagen {
+  grid-area: marcaImagen;
+  height: 100%;
+  margin: 10px; }
+  .cajaMarcaImagen img {
+    width: 100%;
+    outline: 0px;
+    margin: 0px;
+    padding: 0px;
+    transition: transform .5s ease;
+    overflow: hidden;
+    height: 100px;
+    width: auto; }
+  .cajaMarcaImagen:hover img {
+    transform: scale(1.2); }
+
+.cajaMarcaLink {
+  grid-area: marcaLink; }
+  .cajaMarcaLink a {
+    line-height: 60px; }
+
+.cajaTextoMarca {
+  grid-area: marcaTexto;
+  padding: 0px 10px 20px 0px;
+  text-align: left; }
+
+/* Clases para consultas.html -----------------------------------------------*/
+.contenido.contacto {
+  display: flex;
+  text-align: left; }
+
+.formContacto {
+  width: 80%;
+  padding: 40px 8% 40px 8%;
+  margin: auto;
+  background-color: #0f0f0f; }
+  .formContacto input[type=text], .formContacto input[type=email], .formContacto textarea, .formContacto select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: aliceblue;
+    box-sizing: border-box;
+    margin-top: 9px;
+    margin-bottom: 45px;
+    resize: vertical;
+    font-family: Roboto, Helvetica, sans-serif;
+    font-size: 1rem; }
+  .formContacto input[type=submit] {
+    font-family: Roboto, Helvetica, sans-serif;
+    background-color: #0064c2;
+    color: white;
+    padding: 12px 20px;
+    border: 1px solid #003f7a;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block; }
+    .formContacto input[type=submit]:hover {
+      background-color: #0058aa; }
+
+.cajaTelefonoForm, .cajaMarcas {
+  width: 49%;
+  display: inline-block; }
+
+.cajaEmpresaParticular, .cajaMantenermeInformado {
+  width: 49%;
+  display: inline-block; }
+
+.cajaMantenermeInformado {
+  text-align: right; }
+
+#lblParticular {
+  margin-left: 15px; }
+
+.cajaBoton {
+  width: 100%;
+  display: block; }
+
+#btnEnviar {
+  margin: 0 auto;
+  display: block; }
+
+/* Clases para sucursales.html ------------------------------------------------*/
+.contenido.sucursales {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px 0px 20px 0px; }
+
+.cajaSucursal {
+  width: 45%;
+  display: grid;
+  grid-template-areas: "cajaCiudad cajaCiudad" "cajaCiudad cajaCiudad" "cajaMapa cajaDireccion" "cajaMapa cajaDireccion" "cajaMapa cajaTelefono" "cajaMapa cajaTelefono" "cajaMapa cajaTelefono" "cajaMapa cajaTelefono";
+  grid-template-columns: 50%;
+  grid-template-rows: 12.5%;
+  padding: 4px 4px 4px 18px;
+  margin: 10px;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  background-color: #1f1f1f;
+  /* en estilos.scss */ }
+  .cajaSucursal div {
+    padding: 4px; }
+
+.cajaCiudad {
+  grid-area: cajaCiudad; }
+
+.cajaMapa {
+  grid-area: cajaMapa; }
+  .cajaMapa iframe {
+    width: 100%;
+    height: 260px;
+    border: 1px solid #000; }
+
+.cajaDireccion {
+  grid-area: cajaDireccion;
+  background: url("../images/location2.png") no-repeat center -1px;
+  background-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .cajaDireccion h3 {
+    font-size: 1.1rem;
+    padding-top: 5px; }
+  .cajaDireccion h4 {
+    font-size: 0.9rem; }
+
+.cajaTelefono {
+  grid-area: cajaTelefono;
+  background: url("../images/phone2.png") no-repeat center 28px;
+  background-size: 45px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+/*---------------------------------------------------------------------------*/
+/* Media Query para Tablet --------------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+@media (max-width: 1110px) {
+  html {
+    font-size: 12pt; }
+  #gridGeneral {
+    grid-template-areas: "cabecera" "menu" "contenido" "pie";
+    grid-gap: 0px;
+    grid-template-rows: 60px 60px auto 50px;
+    grid-template-columns: 100%;
+    height: 100vh; }
+  header {
+    flex-direction: row;
+    justify-content: space-around; }
+  .menu {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around; }
+    .menu ul li:last-child {
+      padding-right: 0px; }
+  .tituloPagina h2 {
+    font-size: 1.3rem; }
+  /* Tablet index.html ----------------------------------------------------*/
+  .textoIndex {
+    padding: 20px 30px 20px 30px; }
+  /* Tablet vehiculos.html ------------------------------------------------*/
+  .cajaVehiculo {
+    width: 43%; }
+  /* Tablet para vehiculo.html (pagina de detalle de cada vehiculo) -------*/
+  .contenido.vehiculo {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 620px 1fr;
+    grid-template-areas: "fotos" "tabla" "textos" "textos";
+    margin: 15px 0px 15px 0px;
+    padding: 0px;
+    align-content: center; }
+  .gallery {
+    overflow: hidden; }
+  .gallery__img {
+    max-height: 520px; }
+  .cajaTextos {
+    grid-area: textos;
+    margin: 20px 0px 20px 0px;
+    padding: 0px 15px 0px 15px; }
+    .cajaTextos h3 {
+      border-top: 1px solid #2a2a2a;
+      margin: 35px 0px 10px 0px;
+      padding-top: 30px; }
+      .cajaTextos h3:first-child {
+        border: none;
+        margin-top: 0px; }
+    .cajaTextos ul {
+      margin-left: 17px; }
+  /* Tablet nosotros.html -------------------------------------------------*/
+  .contenido.nosotros {
+    padding: 20px; }
+    .contenido.nosotros li {
+      text-align: left;
+      line-height: 20px; }
+  .itemPostventa {
+    padding: 20px; }
+  .linksInternos {
+    padding: 15px 0px 15px 0px; }
+  .ventasImagen img, .asesoramientoImagen img {
+    width: 65% !important; }
+  .nosotrosTaller .infoTaller img {
+    width: 100%; }
+  .nosotrosTaller .infoTaller h3, .nosotrosTaller .infoTaller h4 {
+    font-size: 1rem !important; }
+  /* Tablet contacto.html ------------------------------------------------*/
+  .formContacto input[type=text], .formContacto input[type=email], .formContacto textarea, .formContacto select {
+    padding: 6px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    font-size: 0.8rem; }
+  .cajaTelefonoForm, .cajaMarcas {
+    width: 100%;
+    display: block; }
+  .cajaEmpresaParticular, .cajaMantenermeInformado {
+    width: 100%;
+    display: block; }
+  .cajaMantenermeInformado {
+    padding: 20px 0px 20px 0px;
+    text-align: left; }
+  #btnEnviar {
+    margin-top: 20px; }
+  /* Tablet sucursales.html -------------------------------------------------*/
+  .contenido.sucursales {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 5px; }
+  .cajaSucursal {
+    width: 98%; } }
+
+/*---------------------------------------------------------------------------*/
+/* Media Query para Smartphone ----------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+@media (max-width: 530px) {
+  html {
+    font-size: 11pt; }
+  #gridGeneral {
+    grid-template-areas: "cabecera" "menu" "contenido" "pie";
+    grid-gap: 0px;
+    grid-template-rows: 60px auto auto 50px;
+    grid-template-columns: 100%;
+    height: 100vh; }
+  header {
+    flex-direction: row;
+    justify-content: space-around; }
+    header span {
+      font-size: 1.2rem !important; }
+  .menu {
+    flex-direction: column; }
+    .menu ul li {
+      padding-right: 0px;
+      display: block;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid gray; }
+      .menu ul li:first-child {
+        border-top: 1px solid gray; }
+      .menu ul li a, .menu ul li span {
+        width: 100%;
+        line-height: 1.8em; }
+  .tituloPagina {
+    padding-top: 10px; }
+  .tituloPagina h2 {
+    font-size: 1.1rem; }
+  /* Smartphone index.html ------------------------------------------------*/
+  .textoIndex {
+    padding: 20px; }
+    .textoIndex h1 {
+      font-size: 1.2rem !important; }
+    .textoIndex p {
+      font-size: 0.8rem; }
+  /* Smartphone vehiculos.html -----------------------------------------------*/
+  .cajaVehiculo {
+    width: 100%; }
+  /* Smartphone nosotros.html ---------------------------------------------*/
+  .contenido.nosotros {
+    padding: 20px 10px 20px 10px; }
+    .contenido.nosotros p, .contenido.nosotros li {
+      font-size: 0.8rem; }
+    .contenido.nosotros li {
+      text-align: left;
+      line-height: 15px; }
+  .itemPostventa {
+    padding: 20px; }
+  .linksInternos, .linksInternos a {
+    font-size: 0.8rem;
+    padding: 0px 5px 0px 5px; }
+  .linksInternos {
+    padding: 15px 0px 15px 0px; }
+  .ventasImagen img, .asesoramientoImagen img {
+    width: 80% !important; }
+  .nosotrosTaller .infoTaller h3, .nosotrosTaller .infoTaller h4 {
+    font-size: 0.8rem !important; }
+  /* Smartphone contacto.html --------------------------------------------*/
+  .formContacto input[type=text], .formContacto input[type=email], .formContacto textarea, .formContacto select {
+    padding: 6px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    font-size: 0.8rem; }
+  .cajaTelefonoForm, .cajaMarcas {
+    width: 100%;
+    display: block; }
+  .cajaEmpresaParticular, .cajaMantenermeInformado {
+    width: 100%;
+    display: block; }
+  .cajaMantenermeInformado {
+    padding: 20px 0px 20px 0px;
+    text-align: left; }
+  /* Smartphone sucursales.html ---------------------------------------------*/
+  .contenido.sucursales {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .cajaSucursal {
+    width: 90%;
+    display: grid;
+    grid-template-areas: "cajaCiudad" "cajaMapa" "cajaDireccion" "cajaTelefono";
+    grid-template-columns: 100%;
+    grid-template-rows: 30px 1fr 40px 40px;
+    justify-items: center;
+    padding: 4px; }
+  .cajaDireccion {
+    background: url("../images/location2.png") no-repeat center left 8px;
+    width: 100%;
+    background-size: 25px; }
+    .cajaDireccion h4 {
+      font-size: 1rem; }
+    .cajaDireccion h5 {
+      font-size: 0.8rem; }
+  .cajaTelefono {
+    background: url("../images/phone2.png") no-repeat center left;
+    width: 100%;
+    background-size: 40px; } }

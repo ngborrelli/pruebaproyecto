@@ -1,0 +1,60 @@
+/* Clases para marcas.html --------------------------------------------------*/
+
+.contenido.marcas {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-top: 30px;
+}
+
+.cajaMarca {
+    width: 49%;
+    margin: 5px;
+    display: grid;
+    align-items: start;
+    grid-template-areas:
+      "marcaImagen marcaLink"
+      "marcaImagen marcaTexto";
+    grid-gap: 0px;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 120px 1fr;
+    @include decoracionCajas; /* en estilos.scss */
+
+    &:nth-child(7), &:nth-child(8){
+        margin-bottom: 20px;
+    }
+}
+
+.cajaMarcaImagen {
+    grid-area: marcaImagen;
+    height: 100%;
+    margin: 10px;  
+
+    img {
+        @include imagenes;
+        transition: transform .5s ease;
+        overflow: hidden;
+        height: 100px;
+        width: auto;
+    }
+
+    &:hover img {
+        transform: scale(1.2);
+    }
+}
+
+.cajaMarcaLink {
+    grid-area: marcaLink;
+
+    a {
+        @extend .linksBase;
+        line-height: 60px;
+    }
+
+}
+
+.cajaTextoMarca {
+    grid-area: marcaTexto;
+    padding: 0px 10px 20px 0px;
+    text-align: left;
+}

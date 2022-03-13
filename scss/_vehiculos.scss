@@ -1,0 +1,41 @@
+/* Clases para vehiculos.html --------------------------------------------------*/
+
+.contenido.vehiculos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px 4% 30px 4%;
+}
+
+.cajaVehiculo {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    @include decoracionCajas; /* en estilos.scss */
+
+    img {
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+
+    &:hover img {
+        filter: brightness(1.2);
+    }
+
+    h2, p {
+        text-decoration: none;
+        color: $blanco-custom;
+    }
+
+    .cajaVehiculoTexto {
+        padding: 8px;
+        .grisClaro {
+            color: #b8b8b8;
+            padding-top: 3px;
+        }
+    }
+}

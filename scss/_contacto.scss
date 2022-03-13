@@ -1,0 +1,71 @@
+/* Clases para consultas.html -----------------------------------------------*/
+
+.contenido.contacto {
+    display: flex;
+    text-align: left;
+}
+
+.formContacto {
+    width: 80%;
+    padding: 40px 8% 40px 8%;
+    margin: auto;
+    background-color: $negro-custom;
+
+    input[type=text], input[type=email], textarea, select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: aliceblue;
+        box-sizing: border-box;
+        margin-top: 9px;
+        margin-bottom: 45px;
+        resize: vertical;
+        font-family: Roboto, Helvetica, sans-serif;
+        font-size: 1rem;
+    }
+
+    input[type=submit] {
+        font-family: Roboto, Helvetica, sans-serif;
+        background-color: #0064c2;
+        color: white;
+        padding: 12px 20px;
+        border: 1px solid #003f7a;
+        border-radius: 4px;
+        cursor: pointer;
+        display: block;
+    
+        &:hover {
+            background-color: #0058aa;
+        }
+    }
+}
+
+.cajaTelefonoForm, .cajaMarcas {
+    width: 49%;
+    display: inline-block;
+}
+
+.cajaEmpresaParticular, .cajaMantenermeInformado {
+    width: 49%;
+    display: inline-block;
+}
+
+.cajaMantenermeInformado {
+    text-align: right;
+}
+
+#lblParticular {
+    margin-left: 15px;
+}
+
+.cajaBoton {
+    width: 100%;
+    display: block;
+}
+
+#btnEnviar {
+    margin: 0 auto;
+    display: block;
+}
+

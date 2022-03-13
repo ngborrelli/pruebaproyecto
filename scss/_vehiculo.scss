@@ -1,0 +1,122 @@
+.contenido.vehiculo {
+	display: grid;
+	grid-template-columns: 800px 1fr;
+	grid-template-rows: 600px 1fr;
+	grid-template-areas: "fotos textos"
+                         "tabla textos";
+
+    margin: 15px 0px 15px 0px;
+    padding: 0px 150px 0px 150px;
+}
+
+.cajaFotos {
+
+    margin: 10px;
+
+    img {
+        grid-area: fotos;
+        max-width: 100%;
+        vertical-align: top;
+        cursor: pointer;
+        }
+
+    .gallery {
+        display: flex;
+        margin: 10px auto;
+        max-width: 100%;
+        position: relative;
+        padding-top: 80%;
+    }
+    
+    @media screen and (min-width: 600px) {
+        .gallery {
+            padding-top: 520px;
+        }
+    }
+    
+    .gallery__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        cursor: default !important;
+    }
+    
+    .gallery__thumb {
+        padding-top: 6px;
+        margin: 6px;
+        display: block;
+    }
+    
+    .gallery__selector {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .gallery__selector:checked + .gallery__img {
+        opacity: 1;
+    }
+    
+    .gallery__selector:checked ~ .gallery__thumb > img {
+        box-shadow: 0 0 0 3px #0be2f6;
+    }
+}
+
+
+
+
+.cajaTabla {
+	grid-area: tabla;
+    margin: 10px;
+
+    table {
+        border-collapse: collapse;
+        border: solid gray 2px;
+        border-radius: 6px;
+        width: 100%;
+
+        td {
+            border: 1px solid gray;
+            padding: 10px 6px 10px 6px;
+        }
+        
+        td:first-child {
+             border-left: none;
+        }
+
+        .eti {
+            width: 20%;
+            background-color: #1f1f1f;
+        }
+
+        .val {
+            width: 30%;
+        }
+    }
+    
+    
+}
+
+.cajaTextos {
+	grid-area: textos;
+    margin: 20px 0px 20px 0px;
+    padding: 0px 150px 0px 150px;
+
+    h3 {
+        border-top: 1px solid rgb(42, 42, 42);
+        margin: 35px 0px 10px 0px;
+        padding-top: 30px;
+
+        &:first-child {
+            border: none;
+            margin-top: 0px;
+        }
+    }
+
+    ul {
+        margin-left: 17px;
+    }
+
+}

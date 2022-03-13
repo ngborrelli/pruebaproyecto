@@ -1,0 +1,169 @@
+$font-general: ("smartphone": 11pt, "tablet": 12pt, "desktop": 13pt);
+$font-titulo-general: ("smartphone": 1.2rem, "tablet": 1.5rem, "desktop": 1.7rem);
+$font-titulo: ("smartphone": 1.1rem, "tablet": 1.3rem, "desktop": 1.5rem);
+$blanco-custom: #f0f0f0;
+$negro-custom: #0f0f0f;
+$maxwidth-smartphone: 530px;
+$maxwidth-tablet: 1110px;
+
+@mixin imagenes {
+    width: 100%;
+    outline: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+@mixin decoracionCajas {
+    border: 1px solid $blanco-custom;
+    border-radius: 10px;
+    background-color: #1f1f1f;
+}
+
+/* Clases comunes a todas las paginas ---------------------------------------*/
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    color: $blanco-custom;
+    font-family: Roboto, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    font-size: map-get($font-general, "desktop");
+}
+
+#gridGeneral {
+    display: grid;
+    grid-template-areas:
+      "cabecera menu"
+      "contenido contenido"
+      "pie pie";
+    grid-gap: 0px;
+    grid-template-rows: 60px auto 50px;
+    grid-template-columns: 50% 50%;
+    height: 100vh;
+    background-color: $negro-custom;
+}
+
+header {
+    grid-area: cabecera;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $negro-custom;
+
+    a {
+        margin: 0px;
+        padding: 0px;
+        outline: 0px;
+        text-decoration: none;
+
+        div {
+            display: flex;
+
+            span {
+                line-height: 60px;
+                padding-left: 15px;
+                font-size: map-get($font-titulo-general, "desktop");
+                color: $blanco-custom;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+nav {
+    grid-area: menu;
+    display: flex;
+    margin-left: auto;
+
+    .linkActivo {
+        text-transform: uppercase;
+        line-height: 60px;
+        color: #fff;
+        font-weight: bold;    
+    }
+
+    ul {
+        list-style-type: none;
+        padding-top: 4px;
+
+        li {
+            display: inline;
+            padding-right: 20px;
+
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                line-height: 60px;
+                color: $blanco-custom;
+
+                &:hover {
+                    color: #ffffff;
+                    animation: glow 2s ease-in-out infinite alternate;
+                }
+            }
+        }
+    }
+}
+
+@keyframes glow {
+    from {
+      text-shadow: 0 0 20px #2d9da9;
+    }
+    to {
+      text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+    }
+}
+
+section.contenidoPrincipal {
+    grid-area: contenido;
+}
+
+.tituloPagina {
+    width: 100%;
+    text-align: center;
+}
+
+.tituloPagina h1 {
+    font-size: map-get($font-titulo, "desktop");
+}
+
+.linksBase {
+    text-decoration: none;
+    color: $blanco-custom;
+
+    &:hover {
+        color: #fff;
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+}
+
+footer {
+    grid-area: pie;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $negro-custom;
+    border-top: 1px solid grey;
+
+    a {
+        text-decoration: none;
+        color: #00ca87;
+
+        &:hover {
+            color: #00ffaa;
+        }
+    }
+}
+
+@import "_index.scss";
+@import "_nosotros.scss";
+@import "_vehiculos.scss";
+@import "_vehiculo.scss";
+@import "_marcas.scss";
+@import "_contacto.scss";
+@import "_sucursales.scss";
+@import "_mediaqueryTablet.scss";
+@import "_mediaquerySmartphone.scss";

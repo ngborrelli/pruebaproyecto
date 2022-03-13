@@ -1,0 +1,193 @@
+/*---------------------------------------------------------------------------*/
+/* Media Query para Smartphone ----------------------------------------------*/
+/*---------------------------------------------------------------------------*/
+
+@media (max-width: $maxwidth-smartphone) {
+
+    html {
+        font-size: map-get($font-general, "smartphone");
+    }
+
+    #gridGeneral {
+        grid-template-areas:
+        "cabecera"
+        "menu"
+        "contenido"
+        "pie";
+    
+        grid-gap: 0px;
+        grid-template-rows: 60px auto auto 50px;
+        grid-template-columns: 100%;
+        height: 100vh;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-around;
+
+        span {
+            font-size: map-get($font-titulo-general, "smartphone") !important;
+        }
+    }
+
+    .menu {
+        flex-direction: column;
+
+        ul li {
+            padding-right: 0px;
+            display: block;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid gray;
+
+            &:first-child {
+                border-top: 1px solid gray;
+            }
+
+            a, span {
+                width: 100%;
+                line-height: 1.8em;
+            }
+        }
+    }
+
+    .tituloPagina {
+        padding-top: 10px;
+    }
+
+    .tituloPagina h2 {
+        font-size: map-get($font-titulo, "smartphone");
+    }
+
+    /* Smartphone index.html ------------------------------------------------*/
+
+    .textoIndex {
+        padding: 20px;
+
+        h1 {
+            font-size: 1.2rem !important;
+        }
+
+        p {
+            font-size: 0.8rem;
+        }
+    }
+
+    /* Smartphone vehiculos.html -----------------------------------------------*/
+
+    .cajaVehiculo {
+        width: 100%;
+    }
+
+    /* Smartphone nosotros.html ---------------------------------------------*/
+
+    .contenido.nosotros {
+        padding: 20px 10px 20px 10px;
+
+        p, li {
+            font-size: 0.8rem;
+        }
+
+        li {
+            text-align: left;
+            line-height: 15px;
+        }
+    }
+
+    .itemPostventa {
+        padding: 20px;
+    }
+
+    .linksInternos, .linksInternos a {
+        font-size: 0.8rem;
+        padding: 0px 5px 0px 5px;
+    }
+
+    .linksInternos {
+        padding: 15px 0px 15px 0px;
+    }
+
+    .ventasImagen, .asesoramientoImagen {
+        img {
+            width: 80% !important;
+        }
+    }
+
+    .nosotrosTaller {
+        
+        .infoTaller {
+
+           h3, h4 {
+                font-size: 0.8rem !important;
+           }
+        }
+    }
+
+    /* Smartphone contacto.html --------------------------------------------*/
+
+    .formContacto input[type=text], .formContacto input[type=email], .formContacto textarea, .formContacto select{
+        padding: 6px;
+        margin-top: 6px;
+        margin-bottom: 20px;
+        font-size: 0.8rem;
+    }
+
+    .cajaTelefonoForm, .cajaMarcas {
+        width: 100%;
+        display: block;
+    }
+
+    .cajaEmpresaParticular, .cajaMantenermeInformado {
+        width: 100%;
+        display: block;
+    }
+    
+    .cajaMantenermeInformado {
+        padding: 20px 0px 20px 0px;
+        text-align: left;
+    }
+
+    /* Smartphone sucursales.html ---------------------------------------------*/
+
+    .contenido.sucursales {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cajaSucursal {
+        width: 90%;
+        display: grid;
+        grid-template-areas:
+            "cajaCiudad"
+            "cajaMapa"
+            "cajaDireccion"
+            "cajaTelefono";
+        grid-template-columns: 100%;
+        grid-template-rows: 30px 1fr 40px 40px;
+        justify-items: center;
+        padding: 4px;
+    }
+
+    .cajaDireccion {
+        background: url('../images/location2.png') no-repeat center left 8px;
+        width: 100%;
+        background-size: 25px;
+
+        h4 {
+            font-size: 1rem;
+        }
+
+        h5 {
+            font-size: 0.8rem;
+        }
+    }
+
+    .cajaTelefono {
+        background: url('../images/phone2.png') no-repeat center left;
+        width: 100%;
+        background-size: 40px;
+    }
+}

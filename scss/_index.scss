@@ -1,0 +1,22 @@
+/* Clases para index.html ---------------------------------------------------*/
+
+.fotoIndex {
+    @include imagenes; /* en estilos.scss */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.textoIndex {
+    padding: 20px 10% 20px 10%;
+    text-align: left;
+    background: $negro-custom;
+
+    p {
+        line-height: 30px;
+        margin-bottom: 15px;
+
+        &:last-child {
+            padding-bottom: 20px;
+        }
+    }
+}
